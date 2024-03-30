@@ -16,8 +16,8 @@ interface TradingViewWidgetProps {
 const CustomTradingViewWidget: FC<TradingViewWidgetProps> = ({
   symbol,
   locale = "zh_CN",
-  interval = "D",
-  theme = "light",
+  interval = "30",
+  theme = "dark",
   style = "1",
   allow_symbol_change = true,
   save_image = false,
@@ -32,10 +32,12 @@ const CustomTradingViewWidget: FC<TradingViewWidgetProps> = ({
       script.type = 'text/javascript';
       script.async = true;
       script.innerHTML = JSON.stringify({
-        "autosize": true,
+        // "autosize": true,
+        "width": "660",
+        "height": "400",
         symbol,
         interval,
-        "timezone": "Etc/UTC",
+        "timezone": "Asia/Chongqin",
         theme,
         style,
         locale,
